@@ -8,7 +8,7 @@ export const AppLayout = () => {
 
   useEffect(() => {
     if (!accessToken) {
-      navigate("/sign-in", { replace: true });
+      navigate("/signin", { replace: true });
     }
   }, [navigate]);
 

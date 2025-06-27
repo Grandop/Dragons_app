@@ -49,6 +49,8 @@ type ThemeType = {
       500: string;
       600: string;
       700: string;
+      800: string;
+      900: string;
     };
     red: {
       100: string;

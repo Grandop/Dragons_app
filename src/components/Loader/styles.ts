@@ -38,6 +38,7 @@ export const Loader = styled.div<{ $variant?: "white" | "blue" }>`
   width: 30px;
   height: 30px;
   border-radius: ${(props) => props.theme.borderRadius.circle};
+  justify-self: center;
 
   ${({ $variant = "white" }) => loaderVariants[$variant]}
 

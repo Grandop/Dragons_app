@@ -1,12 +1,17 @@
 import { styled } from "styled-components";
 
-export const Button = styled.button`
+export const Button = styled.button<{
+  $backgroundColor?: string;
+  $width?: string;
+  $height?: string;
+}>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: ${({ $width }) => $width || "100%"};
+  height: ${({ $height }) => $height || "40px"};
   padding: 14px;
-  background-color: ${({ theme }) => theme.colors.neutral[700]};
+  background-color: ${({ $backgroundColor }) => $backgroundColor};
   color: white;
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius.xs};

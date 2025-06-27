@@ -4,14 +4,14 @@ import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 
 export const SignIn = () => {
-  const { errors, handleSubmit, isLoading, onSubmit, register } = useSignin();
+  const { errors, handleSubmit, isLoading, onSubmit, register, theme } =
+    useSignin();
 
   return (
     <>
       <S.LoginContainer>
         <S.LoginCard>
           <S.Title>Login</S.Title>
-
           <form onSubmit={handleSubmit(onSubmit)}>
             <Input
               label="Email"
@@ -21,7 +21,6 @@ export const SignIn = () => {
               error={errors.email}
               {...register("email")}
             />
-
             <Input
               label="Senha"
               id="password"
@@ -30,12 +29,13 @@ export const SignIn = () => {
               error={errors.password}
               {...register("password")}
             />
-
             <Button
               type="submit"
               loading={isLoading}
               loaderColor="blue"
               disabled={isLoading || Object.keys(errors).length > 0}
+              backgroundColor={theme.colors.neutral[700]}
+              height="50px"
             >
               Entrar
             </Button>

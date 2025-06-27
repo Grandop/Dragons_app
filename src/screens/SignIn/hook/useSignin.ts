@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
+import { useTheme } from "styled-components";
 import { useAppDispatch } from "../../../store";
 import { AuthActions } from "../../../store/slices/auth";
 import { LoginFormData, loginSchema } from "../schema";
@@ -18,6 +19,7 @@ export const useSignin = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const theme = useTheme();
   const {
     register,
     handleSubmit,
@@ -28,9 +30,7 @@ export const useSignin = () => {
 
   const onSubmit = async (data: LoginFormData) => {
     setIsLoading(true);
-
     await new Promise((resolve) => setTimeout(resolve, 1000));
-
     if (
       data.email === defaultUser.email &&
       data.password === defaultUser.password
@@ -41,9 +41,8 @@ export const useSignin = () => {
     } else {
       toast.error("Credenciais inválidas");
     }
-
     setIsLoading(false);
   };
 
-  return { isLoading, register, handleSubmit, errors, onSubmit };
+  return { isLoading, register, handleSubmit, errors, onSubmit, theme };
 };
