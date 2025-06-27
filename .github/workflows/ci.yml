@@ -13,6 +13,9 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
+      - name: Run Typescript
+        run: npx tsc
+
       - name: Run Lint
         run: pnpm eslint:check
 
