@@ -1,20 +1,25 @@
-name: CI
+name: "Continuous Integration"
 
-on: [pull_request]
+on: push
+
 jobs:
   CI:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          node-version: 20.x
-      - name: Install Dependencies
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8.15.6
+
+      - name: Install dependencies
         run: pnpm install
 
-      - name: Run Lint
-        run: pnpm eslint:check
+      - name: Run Typescript
+        run: npx tsc
 
-      - name: Run Prettier
-        run: pnpm prettier:fix
+      - name: Run Eslint
+        run: npx eslint .

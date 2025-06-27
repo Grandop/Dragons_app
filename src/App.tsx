@@ -9,7 +9,11 @@ export function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Toaster richColors toastOptions={{ style: { padding: "16px" } }} />
+        <Toaster
+          richColors
+          position="top-right"
+          toastOptions={{ style: { padding: "16px" } }}
+        />
         <RouterProvider router={router} />
       </ThemeProvider>
       <GlobalStyle />
