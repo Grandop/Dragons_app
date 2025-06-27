@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+import { useAppSelector } from "../store";
 
 export const AuthLayout = () => {
   const navigate = useNavigate();
+  const { accessToken } = useAppSelector((state) => state.auth);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    if (token) {
+    if (accessToken) {
       navigate("/", { replace: true });
     }
   }, [navigate]);
