@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 20.x
       - name: Install Dependencies
-        run: pnpm i
+        run: pnpm install
 
       - name: Run Lint
         run: pnpm eslint:check
