@@ -1,20 +1,7 @@
-export interface AuthSessionParams {
-  password: string;
-  email: string;
-  domain: string;
-}
+import { Dragon } from "../../../entities/dragon";
 
-export interface AuthSessionResponse {
-  accessToken: string;
-}
+export type CreateDragonParams = Omit<Dragon, "id" | "createdAt">;
 
-export interface AuthSendEmailToResetPasswordParams {
-  email: string;
-  domain: string;
-}
+export type EditDragonParams = Omit<Dragon, "createdAt">;
 
-export interface ResetPasswordParams {
-  token: string;
-  password: string;
-  confirmPassword: string;
-}
+export type DragonId = Pick<Dragon, "id">;
