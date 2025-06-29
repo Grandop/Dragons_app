@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useAppDispatch } from "@store";
+import { AuthActions } from "@store/slices/auth";
 import { toast } from "sonner";
 import { useTheme } from "styled-components";
-import { useAppDispatch } from "../../../store";
-import { AuthActions } from "../../../store/slices/auth";
 import { LoginFormData, loginSchema } from "../schema";
 
 const defaultUser = {

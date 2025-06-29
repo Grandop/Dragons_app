@@ -1,4 +1,4 @@
-import { theme } from "../../theme/index";
+import { theme } from "@theme/index";
 
 export const FONT_SIZES_PROPS = {
   ...theme.fontSizes.headings,

@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useCreateDragonMutation } from "@store/services/dragon";
 import { toast } from "sonner";
 import { useTheme } from "styled-components";
-import { DragonFormData, dragonSchema } from "../../../utils/schema";
-import { useCreateDragonMutation } from "../../../store/services/dragon";
+import { DragonFormData, dragonSchema } from "@utils/schema";
 
 export const useCreateDragon = () => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
 import * as S from "./styles";
-import { Typography } from "../Typography";
+import { Typography } from "@components/Typography";
 
 interface TextAreaProps {
   id: string;

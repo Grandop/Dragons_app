@@ -1,9 +1,9 @@
 import { IoClose } from "react-icons/io5";
 import * as S from "./styles";
 import { useTheme } from "styled-components";
-import { Button } from "../Button";
-import { Loader } from "../Loader";
-import { Typography } from "../Typography";
+import { Button } from "@components/Button";
+import { Loader } from "@components/Loader";
+import { Typography } from "@components/Typography";
 
 interface ModalProps {
   isOpen: boolean;

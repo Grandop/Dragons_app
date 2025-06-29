@@ -1,6 +1,6 @@
 import * as S from "./styles";
-import { formatDate } from "../../utils/formatDate";
-import { Dragon } from "../../entities/dragon";
+import { Dragon } from "@entities/dragon";
+import { formatDate } from "@utils/formatDate";
 import { Avatar } from "../Avatar";
 
 interface DragonProfileProps {

@@ -1,8 +1,8 @@
 import { Modal } from "..";
+import { Dragon } from "@entities/dragon";
 import { useTheme } from "styled-components";
 import { useRemoveModal } from "../hooks/useRemoveModal";
-import { Dragon } from "../../../entities/dragon";
-import { Typography } from "../../Typography";
+import { Typography } from "@components/Typography";
 
 interface RemoveModalProps {
   isOpen: boolean;

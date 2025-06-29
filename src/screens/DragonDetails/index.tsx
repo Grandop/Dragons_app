@@ -1,9 +1,9 @@
 import { useDetails } from "./hook/useDetails";
 import * as S from "./styles";
-import { Button } from "../../components/Button";
-import { DragonProfile } from "../../components/DragonProfile";
-import { Loader } from "../../components/Loader";
-import { theme } from "../../theme";
+import { theme } from "@theme";
+import { Button } from "@components/Button";
+import { DragonProfile } from "@components/DragonProfile";
+import { Loader } from "@components/Loader";
 
 export const DragonDetails = () => {
   const { dragon, handleBack, isLoading } = useDetails();

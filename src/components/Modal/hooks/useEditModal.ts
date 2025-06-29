@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { Dragon } from "@entities/dragon";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useEditDragonMutation } from "@store/services/dragon";
 import { toast } from "sonner";
-import { DragonFormData, dragonSchema } from "../../../utils/schema";
-import { Dragon } from "../../../entities/dragon";
-import { useEditDragonMutation } from "../../../store/services/dragon";
+import { DragonFormData, dragonSchema } from "@utils/schema";
 
 export const useEditModal = (
   onClose: () => void,

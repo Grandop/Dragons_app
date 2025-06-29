@@ -1,7 +1,7 @@
 import type { CreateDragonParams, DragonId, EditDragonParams } from "./types";
+import { Dragon } from "@entities/dragon";
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { baseQuery } from "../../config/base-query";
-import { Dragon } from "../../../entities/dragon";
 
 export const DragonService = createApi({
   reducerPath: "dragon-service",
