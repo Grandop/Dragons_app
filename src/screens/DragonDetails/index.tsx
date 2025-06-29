@@ -5,7 +5,7 @@ import { DragonProfile } from "../../components/DragonProfile";
 import { Loader } from "../../components/Loader";
 import { theme } from "../../theme";
 
-export const Details = () => {
+export const DragonDetails = () => {
   const { dragon, handleBack, isLoading } = useDetails();
 
   return (

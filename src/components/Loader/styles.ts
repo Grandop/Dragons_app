@@ -3,8 +3,13 @@ import styled, { css, keyframes } from "styled-components";
 const loaderVariants = {
   white: css`
     background:
-      radial-gradient(farthest-side, #ffff 94%, #0000) top/8px 8px no-repeat,
-      conic-gradient(#0000 30%, #ffff);
+      radial-gradient(
+          farthest-side,
+          ${(props) => props.theme.colors.neutral[0]} 94%,
+          #0000
+        )
+        top/8px 8px no-repeat,
+      conic-gradient(#0000 30%, ${(props) => props.theme.colors.neutral[0]});
     -webkit-mask: radial-gradient(
       farthest-side,
       #0000 calc(100% - 8px),

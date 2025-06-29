@@ -1,4 +1,3 @@
-import { SiDragonframe } from "react-icons/si";
 import { styled } from "styled-components";
 
 export const Grid = styled.div`
@@ -11,13 +10,6 @@ export const DragonIcon = styled.img`
   width: 60px;
   height: 60px;
   border-radius: ${({ theme }) => theme.borderRadius.circle};
-`;
-
-export const EmptyDragonIcon = styled(SiDragonframe)`
-  width: 60px;
-  height: 60px;
-  border-radius: ${({ theme }) => theme.borderRadius.circle};
-  color: ${({ theme }) => theme.colors.neutral[200]};
 `;
 
 export const Card = styled.div`

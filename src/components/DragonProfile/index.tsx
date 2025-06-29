@@ -1,6 +1,7 @@
 import * as S from "./styles";
 import { formatDate } from "../../utils/formatDate";
 import { Dragon } from "../../entities/dragon";
+import { EmptyDragonIcon } from "../EmptyDragonIcon";
 
 interface DragonProfileProps {
   dragon: Dragon | undefined;
@@ -22,7 +23,7 @@ export const DragonProfile = ({ dragon }: DragonProfileProps) => {
                 }}
               />
             ) : (
-              <S.EmptyDragonIcon />
+              <EmptyDragonIcon />
             )}
           </S.DragonAvatar>
 

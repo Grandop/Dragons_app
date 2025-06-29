@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AppLayout } from "../layouts/AppLayout";
 import { AuthLayout } from "../layouts/AuthLayout";
-import { Details } from "../screens/Details";
+import { CreateDragon } from "../screens/CreateDragon";
+import { DragonDetails } from "../screens/DragonDetails";
 import { Home } from "../screens/Home";
 import { SignIn } from "../screens/SignIn";
 
@@ -15,12 +16,12 @@ export const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/dragon/:id",
-        element: <Details />
+        path: "/dragons/:id",
+        element: <DragonDetails />
       },
       {
-        path: "/create-dragon/",
-        element: <Details />
+        path: "/dragons/create",
+        element: <CreateDragon />
       }
     ]
   },

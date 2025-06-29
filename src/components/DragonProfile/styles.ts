@@ -1,4 +1,3 @@
-import { SiDragonframe } from "react-icons/si";
 import { styled } from "styled-components";
 import { Typography } from "../Typography";
 
@@ -53,13 +52,6 @@ export const AvatarImage = styled.img`
 
 export const ProfileInfo = styled.div`
   flex: 1;
-`;
-
-export const EmptyDragonIcon = styled(SiDragonframe)`
-  width: 60px;
-  height: 60px;
-  border-radius: ${({ theme }) => theme.borderRadius.circle};
-  color: ${({ theme }) => theme.colors.neutral[200]};
 `;
 
 export const DragonName = styled(Typography).attrs((props) => ({

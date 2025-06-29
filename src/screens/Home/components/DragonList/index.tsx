@@ -1,6 +1,7 @@
 import * as S from "./styles";
 import { useDragonList } from "../../hooks/useDragonList";
 import { Button } from "../../../../components/Button";
+import { EmptyDragonIcon } from "../../../../components/EmptyDragonIcon";
 import { EditModal } from "../../../../components/Modal/EditModal";
 import { RemoveModal } from "../../../../components/Modal/RemoveModal";
 import { Typography } from "../../../../components/Typography";
@@ -31,7 +32,7 @@ export const DragonList = ({ dragons }: DragonListProps) => {
             {dragon.imageUrl ? (
               <S.DragonIcon src={dragon.imageUrl} />
             ) : (
-              <S.EmptyDragonIcon />
+              <EmptyDragonIcon />
             )}
 
             <Typography

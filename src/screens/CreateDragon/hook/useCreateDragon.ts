@@ -1,16 +1,20 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { DragonFormData, dragonSchema } from "../utils/schema";
+import { toast } from "sonner";
+import { useTheme } from "styled-components";
+import { DragonFormData, dragonSchema } from "../../../utils/schema";
 import { useCreateDragonMutation } from "../../../store/services/dragon";
 
-export const useCreateModal = (onClose: () => void) => {
+export const useCreateDragon = () => {
+  const navigate = useNavigate();
+  const theme = useTheme();
   const [createDragon, { isLoading: isCreating }] = useCreateDragonMutation();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
     watch
   } = useForm<DragonFormData>({
     resolver: zodResolver(dragonSchema),
@@ -30,23 +34,25 @@ export const useCreateModal = (onClose: () => void) => {
         type: data.type,
         histories: data.histories
       }).unwrap();
-      handleClose();
-    } catch (error) {
-      console.error("Erro ao criar dragão:", error);
+      navigate("/dragons");
+      toast.success("Dragão criado com sucesso!");
+    } catch {
+      toast.error("Erro ao criar dragão. Tente novamente.");
     }
   };
 
-  const handleClose = () => {
-    reset();
-    onClose();
+  const handleBack = () => {
+    navigate("/dragons");
   };
 
   return {
+    handleFormSubmit,
     register,
     handleSubmit,
     errors,
     watch,
-    handleFormSubmit,
-    isCreating
+    isCreating,
+    handleBack,
+    theme
   };
 };

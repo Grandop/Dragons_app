@@ -28,7 +28,7 @@ export const useDragonList = (dragons: Dragon[] | undefined) => {
   };
 
   const navigateToDetails = (id: string) => {
-    navigate(`/dragon/${id}`);
+    navigate(`/dragons/${id}`);
   };
 
   return {

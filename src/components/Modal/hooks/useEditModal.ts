@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { DragonFormData, dragonSchema } from "../utils/schema";
+import { DragonFormData, dragonSchema } from "../../../utils/schema";
 import { Dragon } from "../../../entities/dragon";
 import { useEditDragonMutation } from "../../../store/services/dragon";
 
