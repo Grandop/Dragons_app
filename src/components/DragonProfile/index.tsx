@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import { formatDate } from "../../utils/formatDate";
 import { Dragon } from "../../entities/dragon";
-import { EmptyDragonIcon } from "../EmptyDragonIcon";
+import { Avatar } from "../Avatar";
 
 interface DragonProfileProps {
   dragon: Dragon | undefined;
@@ -12,20 +12,7 @@ export const DragonProfile = ({ dragon }: DragonProfileProps) => {
     <S.DragonCard>
       <S.ProfileSection>
         <S.ProfileHeader>
-          <S.DragonAvatar>
-            {dragon?.imageUrl ? (
-              <S.AvatarImage
-                src={dragon.imageUrl}
-                alt={dragon.name}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = "none";
-                }}
-              />
-            ) : (
-              <EmptyDragonIcon />
-            )}
-          </S.DragonAvatar>
+          <Avatar src={dragon?.imageUrl} width="120px" height="120px" border />
 
           <S.ProfileInfo>
             <S.DragonName>{dragon?.name}</S.DragonName>

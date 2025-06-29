@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import { useDragonList } from "../../hooks/useDragonList";
+import { Avatar } from "../../../../components/Avatar";
 import { Button } from "../../../../components/Button";
-import { EmptyDragonIcon } from "../../../../components/EmptyDragonIcon";
 import { EditModal } from "../../../../components/Modal/EditModal";
 import { RemoveModal } from "../../../../components/Modal/RemoveModal";
 import { Typography } from "../../../../components/Typography";
@@ -29,11 +29,7 @@ export const DragonList = ({ dragons }: DragonListProps) => {
       {sortedDragons?.map((dragon) => (
         <S.Card onClick={() => navigateToDetails(dragon.id)} key={dragon.id}>
           <S.CardHeader>
-            {dragon.imageUrl ? (
-              <S.DragonIcon src={dragon.imageUrl} />
-            ) : (
-              <EmptyDragonIcon />
-            )}
+            <Avatar src={dragon?.imageUrl} width="60px" height="60px" />
 
             <Typography
               color={theme.colors.neutral[0]}
