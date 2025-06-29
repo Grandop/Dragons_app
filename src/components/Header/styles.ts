@@ -18,10 +18,10 @@ export const LogoIcon = styled.img`
   height: 32px;
 `;
 
-export const SettingsButton = styled.button`
+export const SettingsContainer = styled.div`
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: ${({ theme }) => theme.colors.neutral[800]};
   border: none;
   border-radius: 8px;
   color: ${({ theme }) => theme.colors.neutral[0]};
@@ -32,11 +32,6 @@ export const SettingsButton = styled.button`
   transition: all 0.2s ease;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.2);
-  }
-
-  &::before {
-    content: "⚙️";
-    font-size: 18px;
+    background: ${({ theme }) => theme.colors.neutral[500]};
   }
 `;

@@ -13,7 +13,6 @@ interface ModalProps {
   children: React.ReactNode;
   confirmText?: string;
   cancelText?: string;
-  confirmDisabled?: boolean;
   confirmLoading?: boolean;
 }
 
@@ -25,7 +24,6 @@ export const Modal = ({
   children,
   confirmText = "Confirmar",
   cancelText = "Cancelar",
-  confirmDisabled = false,
   confirmLoading = false
 }: ModalProps) => {
   const theme = useTheme();
@@ -38,7 +36,7 @@ export const Modal = ({
   };
 
   const handleConfirm = () => {
-    if (!confirmDisabled && !confirmLoading) {
+    if (!confirmLoading) {
       onConfirm();
     }
   };
@@ -74,8 +72,9 @@ export const Modal = ({
             backgroundColor={theme.colors.red[100]}
             width="100px"
             onClick={handleConfirm}
+            disabled={confirmLoading}
           >
-            {confirmLoading ? <Loader variant="white" /> : confirmText}
+            {confirmLoading ? <Loader variant="blue" /> : confirmText}
           </Button>
         </S.ModalFooter>
       </S.ModalContainer>

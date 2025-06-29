@@ -1,10 +1,10 @@
 import * as S from "./styles";
 import { useDragonList } from "../../hooks/useDragonList";
 import { Button } from "../../../../components/Button";
-import { Modal } from "../../../../components/Modal";
+import { EditModal } from "../../../../components/Modal/EditModal";
+import { RemoveModal } from "../../../../components/Modal/RemoveModal";
 import { Typography } from "../../../../components/Typography";
 import { Dragon } from "../../../../entities/dragon";
-import { RemoveModal } from "../RemoveModal";
 
 interface DragonListProps {
   dragons: Dragon[] | undefined;
@@ -19,13 +19,14 @@ export const DragonList = ({ dragons }: DragonListProps) => {
     sortedDragons,
     dragonSelectd,
     handleDragonClicked,
+    navigateToDetails,
     theme
   } = useDragonList(dragons);
 
   return (
     <S.Grid>
       {sortedDragons?.map((dragon) => (
-        <S.Card key={dragon.id}>
+        <S.Card onClick={() => navigateToDetails(dragon.id)} key={dragon.id}>
           <S.CardHeader>
             {dragon.imageUrl ? (
               <S.DragonIcon src={dragon.imageUrl} />
@@ -54,7 +55,7 @@ export const DragonList = ({ dragons }: DragonListProps) => {
               backgroundColor={theme.colors.neutral[800]}
               height="20px"
               width="90px"
-              onClick={() => handleDragonClicked(dragon, "remove")}
+              onClick={(event) => handleDragonClicked(event, dragon, "remove")}
             >
               Remover
             </Button>
@@ -63,7 +64,7 @@ export const DragonList = ({ dragons }: DragonListProps) => {
               backgroundColor={theme.colors.red[100]}
               height="20px"
               width="70px"
-              onClick={() => handleDragonClicked(dragon, "edit")}
+              onClick={(event) => handleDragonClicked(event, dragon, "edit")}
             >
               Editar
             </Button>
@@ -77,21 +78,13 @@ export const DragonList = ({ dragons }: DragonListProps) => {
           dragonSelected={dragonSelectd}
         />
       )}
-      <Modal
-        isOpen={isEditModalOpen}
-        onClose={() => setEditIsModalOpen(false)}
-        onConfirm={() => {
-          console.log("Confirmado!");
-          setEditIsModalOpen(false);
-        }}
-        title="Editar Dragão"
-        confirmText="Editar"
-        cancelText="Cancelar"
-      >
-        <Typography color={theme.colors.neutral[0]} fontSize="p2">
-          edicao
-        </Typography>
-      </Modal>
+      {isEditModalOpen && (
+        <EditModal
+          onClose={() => setEditIsModalOpen(false)}
+          isOpen={isEditModalOpen}
+          dragonSelected={dragonSelectd}
+        />
+      )}
     </S.Grid>
   );
 };

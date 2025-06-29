@@ -37,7 +37,7 @@ export const useSignin = () => {
     ) {
       toast.success("Login realizado com sucesso!");
       dispatch(AuthActions.login(fakeToken));
-      navigate("/");
+      navigate("/dragons");
     } else {
       toast.error("Credenciais inválidas");
     }

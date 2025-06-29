@@ -1,8 +1,8 @@
+import { Modal } from "..";
 import { useTheme } from "styled-components";
-import { useRemoveModal } from "../../hooks/useRemoveModal";
-import { Modal } from "../../../../components/Modal";
-import { Typography } from "../../../../components/Typography";
-import { Dragon } from "../../../../entities/dragon";
+import { useRemoveModal } from "../hooks/useRemoveModal";
+import { Dragon } from "../../../entities/dragon";
+import { Typography } from "../../Typography";
 
 interface RemoveModalProps {
   isOpen: boolean;
@@ -15,22 +15,18 @@ export const RemoveModal = ({
   onClose,
   dragonSelected
 }: RemoveModalProps) => {
-  const { handleRemoveDragon } = useRemoveModal();
+  const { handleRemoveDragon, isDeleting } = useRemoveModal(onClose);
   const theme = useTheme();
-
-  console.log("RemoveModal", dragonSelected);
 
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      onConfirm={() => {
-        handleRemoveDragon(dragonSelected?.id || "");
-        onClose();
-      }}
+      onConfirm={() => handleRemoveDragon(dragonSelected?.id || "")}
       title="Remover Dragão"
       confirmText="Remover"
       cancelText="Cancelar"
+      confirmLoading={isDeleting}
     >
       <Typography color={theme.colors.neutral[0]} fontSize="p2">
         Tem certeza que deseja remover este dragão? Esta ação não pode ser

@@ -1,6 +1,7 @@
 import { useSignin } from "./hook/useSignin";
 import * as S from "./styles";
 import { Button } from "../../components/Button";
+import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 
 export const SignIn = () => {
@@ -8,7 +9,8 @@ export const SignIn = () => {
     useSignin();
 
   return (
-    <>
+    <S.Container>
+      <Header />
       <S.LoginContainer>
         <S.LoginCard>
           <S.Title>Login</S.Title>
@@ -17,6 +19,7 @@ export const SignIn = () => {
               label="Email"
               id="email"
               type="text"
+              variant="light"
               placeholder="Digite seu e-mail"
               error={errors.email}
               {...register("email")}
@@ -25,6 +28,7 @@ export const SignIn = () => {
               label="Senha"
               id="password"
               type="password"
+              variant="light"
               placeholder="Digite sua senha"
               error={errors.password}
               {...register("password")}
@@ -42,6 +46,6 @@ export const SignIn = () => {
           </form>
         </S.LoginCard>
       </S.LoginContainer>
-    </>
+    </S.Container>
   );
 };

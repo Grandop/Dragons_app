@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { useTheme } from "styled-components";
 import { Dragon } from "../../../entities/dragon";
 
@@ -7,17 +8,27 @@ export const useDragonList = (dragons: Dragon[] | undefined) => {
   const [isEditModalOpen, setEditIsModalOpen] = useState(false);
   const [dragonSelectd, setDragonSelected] = useState<Dragon | null>(null);
   const theme = useTheme();
+  const navigate = useNavigate();
   const sortedDragons = dragons
     ?.slice()
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  const handleDragonClicked = (dragon: Dragon, type: "edit" | "remove") => {
+  const handleDragonClicked = (
+    event: React.MouseEvent,
+    dragon: Dragon,
+    type: "edit" | "remove"
+  ) => {
+    event.stopPropagation();
     setDragonSelected(dragon);
     if (type === "remove") {
       setRemoveIsModalOpen(true);
     } else {
       setEditIsModalOpen(true);
     }
+  };
+
+  const navigateToDetails = (id: string) => {
+    navigate(`/dragon/${id}`);
   };
 
   return {
@@ -28,6 +39,7 @@ export const useDragonList = (dragons: Dragon[] | undefined) => {
     theme,
     sortedDragons,
     dragonSelectd,
-    handleDragonClicked
+    handleDragonClicked,
+    navigateToDetails
   };
 };

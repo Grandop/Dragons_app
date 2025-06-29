@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AppLayout } from "../layouts/AppLayout";
 import { AuthLayout } from "../layouts/AuthLayout";
+import { Details } from "../screens/Details";
 import { Home } from "../screens/Home";
 import { SignIn } from "../screens/SignIn";
 
@@ -10,8 +11,16 @@ export const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {
-        path: "/",
+        path: "/dragons",
         element: <Home />
+      },
+      {
+        path: "/dragon/:id",
+        element: <Details />
+      },
+      {
+        path: "/create-dragon/",
+        element: <Details />
       }
     ]
   },

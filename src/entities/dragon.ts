@@ -4,5 +4,5 @@ export interface Dragon {
   imageUrl: string;
   createdAt: string;
   type: string;
-  histories: string[];
+  histories: string[] | string;
 }

@@ -8,7 +8,7 @@ export const AuthLayout = () => {
 
   useEffect(() => {
     if (accessToken) {
-      navigate("/", { replace: true });
+      navigate("/dragons", { replace: true });
     }
   }, [navigate]);
 
