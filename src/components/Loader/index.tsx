@@ -5,5 +5,5 @@ export interface LoaderProps {
 }
 
 export const Loader = ({ variant = "white" }: LoaderProps) => {
-  return <S.Loader $variant={variant} />;
+  return <S.Loader $variant={variant} role="loading" data-testid="loader" />;
 };

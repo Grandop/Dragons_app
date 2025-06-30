@@ -1,5 +1,5 @@
+import { useDeleteDragonMutation } from "@store/services/dragon";
 import { toast } from "sonner";
-import { useDeleteDragonMutation } from "../../../store/services/dragon";
 
 export const useRemoveModal = (onClose: () => void) => {
   const [deleteDragon, { isLoading: isDeleting }] = useDeleteDragonMutation();

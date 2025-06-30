@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { useAppSelector } from "../store";
+import { useAppSelector } from "@store";
 
 export const AppLayout = () => {
   const navigate = useNavigate();

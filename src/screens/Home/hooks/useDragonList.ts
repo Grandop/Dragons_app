@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { Dragon } from "@entities/dragon";
 import { useTheme } from "styled-components";
-import { Dragon } from "../../../entities/dragon";
 
 export const useDragonList = (dragons: Dragon[] | undefined) => {
   const [isRemoveModalOpen, setRemoveIsModalOpen] = useState(false);

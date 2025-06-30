@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router";
-import { useGetDragonByIdQuery } from "../../../store/services/dragon";
+import { useGetDragonByIdQuery } from "@store/services/dragon";
 
 export const useDetails = () => {
   const { id } = useParams<{ id: string }>();

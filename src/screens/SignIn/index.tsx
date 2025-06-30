@@ -1,8 +1,8 @@
 import { useSignin } from "./hook/useSignin";
 import * as S from "./styles";
-import { Button } from "../../components/Button";
-import { Header } from "../../components/Header";
-import { Input } from "../../components/Input";
+import { Button } from "@components/Button";
+import { Header } from "@components/Header";
+import { Input } from "@components/Input";
 
 export const SignIn = () => {
   const { errors, handleSubmit, isLoading, onSubmit, register, theme } =

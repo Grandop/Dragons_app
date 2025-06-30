@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router";
 import * as S from "./styles";
+import { useGetDragonQuery } from "@store/services/dragon";
 import { useTheme } from "styled-components";
-import { Button } from "../../components/Button";
-import { Header } from "../../components/Header";
-import { Loader } from "../../components/Loader";
-import { Typography } from "../../components/Typography";
 import { DragonList } from "./components/DragonList";
-import { useGetDragonQuery } from "../../store/services/dragon";
+import { Button } from "@components/Button";
+import { Header } from "@components/Header";
+import { Loader } from "@components/Loader";
+import { Typography } from "@components/Typography";
 
 export const Home = () => {
   const { data: dragons, isLoading } = useGetDragonQuery();

@@ -1,11 +1,11 @@
 import * as S from "./styles";
+import { Dragon } from "@entities/dragon";
 import { useDragonList } from "../../hooks/useDragonList";
-import { Avatar } from "../../../../components/Avatar";
-import { Button } from "../../../../components/Button";
-import { EditModal } from "../../../../components/Modal/EditModal";
-import { RemoveModal } from "../../../../components/Modal/RemoveModal";
-import { Typography } from "../../../../components/Typography";
-import { Dragon } from "../../../../entities/dragon";
+import { Avatar } from "@components/Avatar";
+import { Button } from "@components/Button";
+import { EditModal } from "@components/Modal/EditModal";
+import { RemoveModal } from "@components/Modal/RemoveModal";
+import { Typography } from "@components/Typography";
 
 interface DragonListProps {
   dragons: Dragon[] | undefined;

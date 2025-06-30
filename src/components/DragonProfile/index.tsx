@@ -1,6 +1,6 @@
 import * as S from "./styles";
-import { formatDate } from "../../utils/formatDate";
-import { Dragon } from "../../entities/dragon";
+import { Dragon } from "@entities/dragon";
+import { formatDate } from "@utils/formatDate";
 import { Avatar } from "../Avatar";
 
 interface DragonProfileProps {
@@ -26,11 +26,11 @@ export const DragonProfile = ({ dragon }: DragonProfileProps) => {
           </S.ProfileInfo>
         </S.ProfileHeader>
 
-        {dragon?.histories && (
+        {dragon && (
           <S.HistorySection>
             <S.SectionTitle>História ou Descrição</S.SectionTitle>
             <S.HistoryText>
-              {dragon.histories.length > 0
+              {dragon.histories && dragon.histories.length > 0
                 ? dragon.histories
                 : "Nenhuma descrição encontrada."}
             </S.HistoryText>

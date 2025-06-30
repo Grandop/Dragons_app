@@ -1,4 +1,4 @@
-import { theme } from "../../theme/index";
+import { theme } from "@theme/index";
 
 export const FONT_SIZES_PROPS = {
   ...theme.fontSizes.headings,
@@ -9,7 +9,6 @@ export const FONT_WEIGHTS_PROPS = {
   ...theme.fontWeight
 };
 
-// Map typography variants to HTML tags
 export const MAPPED_TAGS = {
   heading1: "h1",
   heading2: "h2",

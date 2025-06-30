@@ -1,9 +1,9 @@
 import { Modal } from "..";
 import * as S from "./styles";
+import { Dragon } from "@entities/dragon";
 import { useEditModal } from "../hooks/useEditModal";
-import { Dragon } from "../../../entities/dragon";
-import { Input } from "../../Input";
-import { TextArea } from "../../TextArea";
+import { Input } from "@components/Input";
+import { TextArea } from "@components/TextArea";
 
 interface EditModalProps {
   isOpen: boolean;

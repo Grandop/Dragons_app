@@ -1,11 +1,11 @@
 import { PiSignOutBold } from "react-icons/pi";
 import { useNavigate } from "react-router";
 import * as S from "./styles";
+import DragonIcon from "@assets/images/dragon.png";
+import { useAppDispatch, useAppSelector } from "@store";
+import { AuthActions } from "@store/slices/auth";
 import { toast } from "sonner";
 import { useTheme } from "styled-components";
-import DragonIcon from "../../assets/images/dragon.png";
-import { useAppDispatch, useAppSelector } from "../../store";
-import { AuthActions } from "../../store/slices/auth";
 import { Typography } from "../Typography";
 
 export const Header = () => {

@@ -1,70 +1,76 @@
-# React + TypeScript + Vite
+# Dragons App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+App de Dragões
 
-Currently, two official plugins are available:
+## Estrutura de pastas (Projeto)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+src/
+├── assets/
+├── components/
+│   ├── Button/
+│   ├── Input/
+├── constants/
+├── entities/
+├── routes/
+│    └── routes.tsx
+├── screens/
+│   ├── Home/
+│   ├── Auth/
+│     └── index.tsx
+│     └── styles.ts
+│     └── utils.ts
+│     ├── hooks /
+│           └── useAuth.ts
+├── store/
+│     └── index.ts
+│   ├── config/
+│   ├── services/
+│   ├── slices/
+├── theme/
+│   ├── styled.d.ts
+├── utils/
+├── App.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# Estrutura de Pastas e Propósito
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **📂 `assets/`**:
+  - Contém ativos estáticos, como imagens, fontes e outros arquivos de mídia usados na aplicação.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# Dragons_app
+- **📂 `components/`**:
+  - Abriga componentes de interface de usuário reutilizáveis. Esses componentes podem ser botões, entradas, elementos de texto, etc., que são usados em diferentes telas da aplicação.
+
+- **📂 `constants/`**:
+  - Armazena valores constantes que são usados em toda a aplicação. Isso pode incluir valores de configuração, URLs ou qualquer outro dado estático.
+
+- **📂 `entities/`**:
+  - Contém os modelos de dados ou entidades usadas na aplicação. Normalmente, são interfaces ou classes TypeScript que definem a estrutura dos dados.
+
+- **📂 `hooks/`**:
+  - Esta pasta é para hooks personalizados do React que encapsulam lógica reutilizável. Hooks podem ser usados para gerenciar estado, lidar com efeitos colaterais ou qualquer outra lógica que possa ser compartilhada entre componentes.
+
+- **📂 `routes/`**:
+  - Contém a configuração de navegação para a aplicação. Isso inclui a configuração de pilhas de navegação, abas ou qualquer outro padrão de navegação usado.
+
+- **📂 `screens/`**:
+  - Armazena as diferentes telas ou páginas da aplicação. Cada tela normalmente corresponde a uma visão ou rota diferente no aplicativo.
+  - **📂 `Auth/hooks/`**:
+    - Contém hooks específicos para a tela de autenticação. Esses hooks encapsulam lógica relacionada à autenticação, como gerenciamento de estado de login, validação de credenciais, ou integração com serviços de autenticação.
+    - **📄 `useAuth.ts`**: Um hook personalizado que pode gerenciar o estado de autenticação do usuário. Ele pode incluir funções para login, logout, e verificar o status de autenticação. Isso permite que a lógica de autenticação seja reutilizável e facilmente gerenciável dentro dos componentes da tela de autenticação.
+
+- **📂 `store/`**:
+  - Gerencia o estado global da aplicação usando Redux ou qualquer outra biblioteca de gerenciamento de estado.
+  - **📂 `config/`**: Arquivos de configuração para a configuração do store.
+  - **📂 `slices/`**: Slices do Redux que definem estado e reducers para diferentes partes da aplicação.
+  - **📂 `services/`**: Contém serviços que interagem com APIs ou realizam outras operações assíncronas.
+
+- **📂 `theme/`**:
+  - Contém informações de tema para a aplicação, como esquemas de cores, estilos de fontes, etc.
+  - **📄 `styled.d.ts`**: Definições de tipos para o tema, garantindo segurança de tipos ao usar styled-components.
+
+- **📂 `utils/`**:
+  - Funções utilitárias e auxiliares que são usadas em toda a aplicação. Isso pode incluir funções para formatação, cálculos ou qualquer outra lógica reutilizável.
+
+- **📄 `App.tsx`**:
+  - O ponto de entrada principal da aplicação onde o componente raiz é definido. Este arquivo normalmente configura o provedor para o store, navegação e quaisquer outras configurações globais.

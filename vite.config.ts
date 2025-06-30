@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import react from "@vitejs/plugin-react";
 import path from "path";
 import { defineConfig } from "vite";
@@ -5,6 +6,7 @@ import { defineConfig } from "vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
@@ -12,11 +14,19 @@ export default defineConfig({
       "@screens": path.resolve(__dirname, "src/screens"),
       "@routes": path.resolve(__dirname, "src/routes"),
       "@components": path.resolve(__dirname, "src/components"),
+      "@entities": path.resolve(__dirname, "src/entities"),
       "@assets": path.resolve(__dirname, "src/assets"),
       "@store": path.resolve(__dirname, "src/store"),
       "@utils": path.resolve(__dirname, "src/utils"),
       "@layouts": path.resolve(__dirname, "src/layouts"),
       "@theme": path.resolve(__dirname, "src/theme")
     }
+  },
+  test: {
+    setupFiles: ["./setupTests.ts"],
+    environment: "jsdom",
+    include: ["**/*.spec.tsx"],
+    globals: true,
+    css: true
   }
 });

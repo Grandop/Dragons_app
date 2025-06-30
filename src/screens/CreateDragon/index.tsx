@@ -1,10 +1,10 @@
 import { useCreateDragon } from "./hook/useCreateDragon";
 import * as S from "./styles";
-import { Button } from "../../components/Button";
-import { EmptyDragonIcon } from "../../components/EmptyDragonIcon";
-import { Input } from "../../components/Input";
-import { TextArea } from "../../components/TextArea";
-import { Typography } from "../../components/Typography";
+import { Button } from "@components/Button";
+import { EmptyDragonIcon } from "@components/EmptyDragonIcon";
+import { Input } from "@components/Input";
+import { TextArea } from "@components/TextArea";
+import { Typography } from "@components/Typography";
 
 export const CreateDragon = () => {
   const {
