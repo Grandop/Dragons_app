@@ -1,11 +1,10 @@
 # Dragons App
 
-Aplicação desenvolvida com React, TypeScript e Redux Toolkit que permite o CRUD completo (Criação, Leitura, Atualização e Exclusão) de dragões, com as seguintes características:
-
-✔ Arquitetura robusta utilizando Redux para gerenciamento de estado global
-✔ Tipagem estática com TypeScript para maior segurança no desenvolvimento
-✔ Testes unitários implementados com Vitest para garantir qualidade de código
-✔ Interface intuitiva com operações completas de cadastro, edição e visualização
+Aplicação desenvolvida com React, TypeScript, Redux Toolkit e Vitest que permite o CRUD completo (Criação, Leitura, Atualização e Exclusão) de dragões, com as seguintes características:
+  - Arquitetura robusta utilizando Redux para gerenciamento de estado global
+  - Tipagem estática com TypeScript para maior segurança no desenvolvimento
+  - Testes unitários implementados com Vitest para garantir qualidade de código
+  - Interface intuitiva com operações completas de cadastro, edição e visualização
 
 ## Web
 
