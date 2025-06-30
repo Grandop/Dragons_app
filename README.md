@@ -1,6 +1,12 @@
 # Dragons App
 
-App de Dragões
+## Web
+
+https://github.com/user-attachments/assets/42351f4c-e084-4cae-881d-af5fdab4809b
+
+## Mobile
+
+https://github.com/user-attachments/assets/e5f15f35-5b87-4062-803a-55e3a85fcef5
 
 ## Estrutura de pastas (Projeto)
 
