@@ -1,4 +1,4 @@
-import { forwardRef, InputHTMLAttributes } from "react";
+import { forwardRef, InputHTMLAttributes, useId } from "react";
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
 import * as S from "./styles";
 
@@ -26,12 +26,15 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
-    const inputProps = register || { ref, name, id };
+    const generatedId = useId();
+    const inputId = id || generatedId;
+
+    const inputProps = register || { ref, name, id: inputId };
 
     return (
       <S.InputWrapper>
         {label && (
-          <S.Label $variant={variant} htmlFor={id}>
+          <S.Label $variant={variant} htmlFor={inputId}>
             {label}
           </S.Label>
         )}
@@ -41,7 +44,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           <S.Input
             {...inputProps}
             {...props}
-            id={id}
+            id={inputId}
             $variant={variant}
             $hasIcon={!!icon}
             $hasError={!!error}

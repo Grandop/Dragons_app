@@ -1,0 +1,67 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DragonProfile component > should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-hvigdm ckrhaK"
+  >
+    <div
+      class="sc-fhHczv ckJNIP"
+    >
+      <div
+        class="sc-ggWZvA jRUOUy"
+      >
+        <div
+          class="sc-kcLKEh cpQqLO"
+          data-testid="avatar-container"
+        >
+          <img
+            alt="Avatar"
+            class="sc-dntSTA ilEuCB"
+            src="https://fakeimg.com/dragon.png"
+          />
+        </div>
+        <div
+          class="sc-hjsuWn dcOXKT"
+        >
+          <h1
+            class="sc-bRKDuR eoLTkw sc-jJLAfE dcqtOp"
+            font-size="heading1"
+          >
+            Test Dragon
+          </h1>
+          <h3
+            class="sc-bRKDuR fjtKsL sc-hwkwBN bVZfqO"
+            font-size="heading3"
+          >
+            Criado em
+             
+            31/12/2023
+          </h3>
+          <div
+            class="sc-kNOymR eytJCS"
+          >
+            Fire
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-dYwGCk bLwZUA"
+      >
+        <h1
+          class="sc-bRKDuR eoLTkw sc-lgpSej dIyoxh"
+          font-size="heading1"
+        >
+          História ou Descrição
+        </h1>
+        <h3
+          class="sc-bRKDuR fjtKsL sc-eqYatC ihZcnu"
+          font-size="heading3"
+        >
+          This is a fierce dragon
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+`;

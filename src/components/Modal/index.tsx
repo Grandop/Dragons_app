@@ -42,7 +42,7 @@ export const Modal = ({
   };
 
   return (
-    <S.ModalOverlay onClick={handleOverlayClick}>
+    <S.ModalOverlay data-testid="modal-overlay" onClick={handleOverlayClick}>
       <S.ModalContainer>
         <S.CloseButton onClick={onClose}>
           <IoClose />

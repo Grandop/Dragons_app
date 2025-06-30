@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -19,9 +19,10 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "@*": ["./src/*"]
-    }
+    },
+    "types": ["@testing-library/jest-dom", "vitest/globals"]
   },
-  "include": ["src", "setupTests.ts", ".storybook/provider.tsx"],
+  "include": ["src", "setupTests.ts", ".storybook/provider.tsx", "swiper.d.ts"],
   "exclude": ["node_modules"],
   "references": [
     {

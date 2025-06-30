@@ -17,7 +17,12 @@ export const Avatar = ({
   border
 }: AvatarProps) => {
   return (
-    <S.AvatarContainer $width={width} $height={height} $border={border}>
+    <S.AvatarContainer
+      $width={width}
+      $height={height}
+      $border={border}
+      data-testid="avatar-container"
+    >
       {src ? <S.AvatarImage src={src} alt={alt} /> : <EmptyDragonIcon />}
     </S.AvatarContainer>
   );

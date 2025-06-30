@@ -18,7 +18,7 @@ export const LogoIcon = styled.img`
   height: 32px;
 `;
 
-export const SettingsContainer = styled.div`
+export const SettingsContainer = styled.button`
   width: 40px;
   height: 40px;
   background: ${({ theme }) => theme.colors.neutral[800]};

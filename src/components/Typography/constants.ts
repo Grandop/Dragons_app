@@ -9,7 +9,6 @@ export const FONT_WEIGHTS_PROPS = {
   ...theme.fontWeight
 };
 
-// Map typography variants to HTML tags
 export const MAPPED_TAGS = {
   heading1: "h1",
   heading2: "h2",
