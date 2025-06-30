@@ -6,6 +6,21 @@ Aplicação desenvolvida com React, TypeScript, Redux Toolkit e Vitest que permi
   - Testes unitários implementados com Vitest para garantir qualidade de código
   - Interface intuitiva com operações completas de cadastro, edição e visualização
 
+## Como rodar o projeto
+
+1 - Instalar dependêcias
+  `pnpm install`
+
+2 - Iniciar o projeto
+  `pnpm dev`
+
+3 - Abra no navegador 
+  `http://localhost:5173`
+
+## Para rodar os testes
+
+  `pnpm test`
+
 ## Web
 
 https://github.com/user-attachments/assets/42351f4c-e084-4cae-881d-af5fdab4809b
